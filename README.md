@@ -83,9 +83,11 @@
 
 ### 🖥 웹 페이지
 
-![Apr-22-2022 02-43-15](README.assets/Apr-22-2022 02-43-15.gif)
+<div align="center">
+  <img src="README.assets/Apr-22-2022 02-43-15.gif" width=500 />
+</div>
 
 ### 📱 반응형 모바일 페이지
-
-<img src="README.assets/Apr-22-2022 02-58-47-0563968.gif" width=300 />
-
+<div align="center">
+  <img src="README.assets/Apr-22-2022 02-58-47-0563968.gif" width=300 />
+</div>
