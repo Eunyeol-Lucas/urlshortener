@@ -20,7 +20,7 @@ def index(request):
             origin_url= shortened_object.origin_url
              
             context['new_url']  = new_url
-            context['long_url'] = origin_url
+            context['origin_url'] = origin_url
             return render(request, 'index.html', context)
 
         context['errors'] = used_form.errors

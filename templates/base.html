@@ -1,15 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  {% block content %}
-  
-  {% endblock content %}
-  
-</body>
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            height: {
+              650: "650px",
+            },
+            minHeight: {
+              "65vh": "65vh",
+              "50vh": "50vh",
+              "30vh": "20vh",
+            },
+            width: {
+              "70%": "70%",
+              "25%": "25%",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Shorty</title>
+  </head>
+  <body class="h-max">
+    <div class="bg-gradient-to-r from-purple-500 to-pink-500">
+      <nav class="bg-white h-20 w-full fixed z-10">
+        <div class="max-w-screen-xl mx-auto my-auto px-3 flex relative h-full">
+          <div class="w-20 my-auto">
+            <a href="#"
+              ><img
+                src="{%static 'Screenshot 14.png' %}"
+                alt="logo"
+                width="100"
+                height="40"
+              />
+            </a>
+          </div>
+        </div>
+      </nav>
+      <div class="mx-auto relative min-h-80%">
+        {% block content %} {% endblock content %}
+      </div>
+      <footer class="bg-white mt-10 pt-10 relative h-96 bottom-0">
+        <div class="max-w-7xl grid md:grid-cols-5 mx-auto px-5">
+          <div class="flex flex-col">
+            <p class="font-bold my-2">Why Shortly?</p>
+            <p>Shortly 101</p>
+            <p>Integrations & API</p>
+            <p>Enterprise Class</p>
+            <p>Pricing</p>
+          </div>
+          <div>
+            <p class="font-bold my-2">Solutions</p>
+            <p>Social Media</p>
+            <p>Digital Marketing</p>
+            <p>Customer Service</p>
+            <p>For Developers</p>
+          </div>
+          <div>
+            <p class="font-bold my-2">Resources</p>
+          </div>
+          <div>
+            <p class="font-bold my-2">Company</p>
+          </div>
+          <div>
+            <img
+              src="{% static 'Screenshot 14.png' %}"
+              alt="shorty logo"
+              width="100"
+              height="50"
+              class="my-2"
+            />
+            <p>
+              © 2022 Shotly | Handmade in Seoul, Korea, and all over the world
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>

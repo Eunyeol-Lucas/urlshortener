@@ -1,25 +1,66 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<h1>URL shortener</h1>
-<form action="" method='POST'>
-  {% csrf_token %}
-  {{ form.origin_url }}
-  <button type="submit">Shorten</button>
-</form>
-{% if errors %}
-  <div class="alert alert-danger mt-4" role="alert">
-    <p>{{errors}}</p>
-  </div>
-  {% endif %}
-
-  {% if new_url %}
-  <div class="mx-auto text-center mt-5">
-    <h2 class="text-danger">Your shortened Url</h2>
-    <p>You can copy the Link below and share it with your friends</p>
-    <p class="">{{new_url}}</p>
-    <p><span class="text-danger">Previous URL:</span> {{origin_url}}</p>
-  </div>
-  {% endif %}
-
-{% endblock content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="relative">
+  <header class="md:min-h-50vh h-fit relative bg-white md:pb-0 pb-10">
+    <img
+      class="block md:hidden"
+      src="https://docrdsfx76ssb.cloudfront.net/static/1649951924/pages/wp-content/uploads/2022/04/H-M_Generic-3.svg"
+    />
+    <div
+      class="bg-no-repeat relative hidden md:block md:bg-contain bg-cover bg-right min-h-50vh md:bg-top w-80 md:w-full"
+      style="
+        background-image: url(https://docrdsfx76ssb.cloudfront.net/static/1649951924/pages/wp-content/uploads/2022/04/H_Generic-LP-2.svg);
+      "
+    ></div>
+    <div
+      class="mx-auto relative md:absolute top-0 bottom-0 left-0 right-0 w-full md:top-1/3 max-w-7xl"
+    >
+      <div class="px-5 mx-auto">
+        <h1 class="text-6xl font-extrabold mb-5">Short links, big results</h1>
+        <h2 class="text-2xl max-w-screen-md mb-5">
+          A URL shortener built with powerful tools to help you grow and protect
+          your brand.
+        </h2>
+        <button
+          class="bg-blue-600 text-white tracking-wide w-full md:w-64 h-16 text-xl rounded-md hover:bg-blue-700 transition-all duration-300 ease-in-out"
+        >
+          Get Started for Free
+        </button>
+      </div>
+    </div>
+  </header>
+  <main class="w-full px-5 relative">
+    <article class="mt-9 py-auto max-w-7xl mx-auto space-x-4 relative">
+      <form
+        action=""
+        method="POST"
+        class="flex flex-col md:flex-row md:justify-between mb-5"
+      >
+        {% csrf_token %} {{ form.origin_url }}
+        <button
+          class="bg-blue-700 tracking-wide text-white w-full md:w-25% h-16 text-xl rounded-md hover:bg-blue-600 transition-all duration-300 ease-in-out"
+          type="submit"
+        >
+          Shorten
+        </button>
+      </form>
+    </article>
+    {% if errors %}
+    <div class="alert alert-danger mt-4 relative" role="alert">
+      <p>{{errors}}</p>
+    </div>
+    {% endif %} {% if new_url %}
+    <div class="mx-auto relative text-center mt-3 max-w-7xl w-full">
+      <div
+        class="my-box rounded-md shadow-md h-72 flex flex-col items-center justify-center"
+      >
+        <h2 class="text-lg">Your shortened Url</h2>
+        <p class="mb-5">
+          You can copy the Link below and share it with your friends
+        </p>
+        <p class="font-bold">{{new_url}}</p>
+        <p><span class="text-danger">Previous URL:</span> {{origin_url}}</p>
+      </div>
+    </div>
+  </main>
+</div>
+{% endif %} {% endblock content %}

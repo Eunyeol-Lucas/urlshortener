@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
+
+* {
+  font-family: "Mulish", sans-serif;
+}
+
+.my-box {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(14.6469px 17.5762px 29.2937px rgba(0, 0, 0, 0.05));
+  backdrop-filter: blur(20.5056px);
+  border: 1.76px solid #ffffff22;
+}
+
+.my-th {
+  backdrop-filter: blur(4px);
+  /* Note: backdrop-filter has minimal browser support */
+}
+
+.my-br {
+  border-radius: 0.65rem 0.65rem 0 0;
+}
+
+.my-bg {
+  background: #800080; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffc0cb,
+    #800080
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffc0cb,
+    #800080
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
